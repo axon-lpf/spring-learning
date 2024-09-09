@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="aopalliance-1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/aopalliance-1.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring-tx-5.2.6.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

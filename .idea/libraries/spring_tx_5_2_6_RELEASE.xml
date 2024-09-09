@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="spring-tx-5.2.6.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/spring-tx-5.2.6.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/slf4j-api-1.7.30.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/log4j-api-2.11.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/log4j-core-2.11.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

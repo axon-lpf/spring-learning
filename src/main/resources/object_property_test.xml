@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 对象属性赋值方法-->
+    <bean id="user" class="com.spring.source.code.objectPorperty.entities.User">
+        <property name="name" value="axibn"></property>
+        <property name="age" value="39"></property>
+        <property name="id" value="1"></property>
+        <!-- 对象字面量赋值方法-->
+        <property name="email">
+            <null/>
+        </property>
+
+        <!-- 对象的特殊数值赋值方法-->
+        <property name="address">
+            <value><![CDATA[<<北京>>]]></value>
+        </property>
+    </bean>
+
+    <!-- 对象的构造函数赋值法-->
+    <bean id="book" class="com.spring.source.code.objectPorperty.entities.Book">
+        <constructor-arg name="name" value="大话设计模式"></constructor-arg>
+        <constructor-arg name="author" value="陈局"></constructor-arg>
+    </bean>
+
+    <!-- 对象的引用类型赋值法-->
+    <bean id="userService" class="com.spring.source.code.objectPorperty.service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+    <bean id="userDao" class="com.spring.source.code.objectPorperty.dao.impl.UserDaoImpl"></bean>
+
+    <!-- 对象的的属性通过 p空间赋值法，赋值必须要引用   xmlns:p="http://www.springframework.org/schema/p"-->
+    <bean id="phone" class="com.spring.source.code.objectPorperty.entities.Phone" p:name="iphone" p:phone="1760219229"></bean>
+
+     <!--内部bean-->
+    <bean id="employee" class="com.spring.source.code.objectPorperty.entities.Employee">
+        <!--设置对象的属性-->
+        <property name="dept">
+            <bean id="dept" class="com.spring.source.code.objectPorperty.entities.Dept">
+                <property name="id" value="1"></property>
+                <property name="deptName" value="产品研发部"></property>
+            </bean>
+        </property>
+       <!--  设置两个普通的属性-->
+        <property name="id" value="001"></property>
+        <property name="empoyeeName" value="黑悟空"></property>
+    </bean>
+
+
+   <!-- 级联赋值法-->
+    <bean id="employee2" class="com.spring.source.code.objectPorperty.entities.Employee">
+        <property name="id" value="001"></property>
+        <property name="empoyeeName" value="黑悟空2"></property>
+        <property name="dept" ref="dept"></property>
+    </bean>
+    <bean id="dept" class="com.spring.source.code.objectPorperty.entities.Dept">
+        <property name="id" value="003"></property>
+        <property name="deptName" value="技术部2"></property>
+    </bean>
+
+
+</beans>

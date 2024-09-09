@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="spring-context-5.2.6.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/spring-context-5.2.6.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/druid-1.1.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

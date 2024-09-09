@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.spring.source.code.objectPorperty.entities.Student">
+         <!--数组赋值法-->
+        <property name="courses">
+            <array>
+                <value>java课程</value>
+                <value>mysql课程</value>
+            </array>
+        </property>
+
+        <property name="books">
+            <array>
+                <ref bean="book1"></ref>
+                <ref bean="book2"></ref>
+            </array>
+        </property>
+<!--         list赋值法-->
+        <property name="list">
+            <list>
+                <value>我是一个好学生</value>
+                <value>我是一个坏血色花姑娘</value>
+            </list>
+        </property>
+        <property name="bookList">
+            <list>
+                <ref bean="book1"></ref>
+                <ref bean="book2"></ref>
+            </list>
+        </property>
+<!--        map赋值法-->
+        <property name="maps">
+            <map>
+                <entry key="1" value="阿西吧"></entry>
+                <entry key="2" value="ajdlkj"></entry>
+            </map>
+        </property>
+        <property name="bookMaps">
+            <map>
+                <entry key="1" value-ref="book1"></entry>
+                <entry key="2" value-ref="book1"></entry>
+            </map>
+        </property>
+<!--        set 赋值法-->
+        <property name="sets">
+            <set>
+                <value>iuoiasudfioasuif </value>
+                <value>索拉卡老师打开了付款了</value>
+            </set>
+        </property>
+        <property name="bookSets">
+            <set>
+                <ref bean="book1"></ref>
+                <ref bean="book2"></ref>
+            </set>
+        </property>
+    </bean>
+
+
+    <!-- 对象的构造函数赋值法-->
+    <bean id="book1" class="com.spring.source.code.objectPorperty.entities.Book">
+        <constructor-arg name="name" value="大话设计模式"></constructor-arg>
+        <constructor-arg name="author" value="陈局"></constructor-arg>
+    </bean>
+
+    <bean id="book2" class="com.spring.source.code.objectPorperty.entities.Book">
+        <constructor-arg name="name" value="2323jk"></constructor-arg>
+        <constructor-arg name="author" value="238283948"></constructor-arg>
+    </bean>
+
+
+</beans>

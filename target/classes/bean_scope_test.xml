@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- scope 不写默认则是单列bean，应用程序启动时创建-->
+    <bean id="beanScopeSingleton" class="com.spring.source.code.beanScope.entities.BeanScope" scope="singleton">
+        <property name="name" value="我是单例bean"></property>
+    </bean>
+
+    <!-- scope=prototype 是多实例bean,只有在获取的时候创建-->
+    <bean id="beanScopePrototype" class="com.spring.source.code.beanScope.entities.BeanScope" scope="prototype">
+        <property name="name" value="我是多实例bean"></property>
+    </bean>
+</beans>

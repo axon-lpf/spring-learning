@@ -1,0 +1,7 @@
+CGLIB 是一个强大的字节码生成库，主要用于创建动态代理。它通过继承目标类、生成子类、拦截方法调用的方式实现代理功能。其底层原理包括字节码生成、动态代理和方法拦截。CGLIB 的核心源码主要涉及 Enhancer 类、MethodInterceptor 接口、MethodProxy 类和 CodeGeneration 类。
+JDK 动态代理通过 java.lang.reflect.Proxy 类和 InvocationHandler 接口实现动态创建代理对象。它主要用于处理接口类型的代理，通过代理对象可以在方法调用前后插入自定义逻辑。JDK 动态代理与 CGLIB 的主要区别在于：
+
+	•	JDK 动态代理只支持接口类型的代理。
+	•	CGLIB 生成子类，支持类的代理，不需要接口。
+
+选择 JDK 动态代理还是 CGLIB 取决于具体的需求。如果目标类实现了接口，通常使用 JDK 动态代理；如果目标类没有实现接口，则需要使用 CGLIB。

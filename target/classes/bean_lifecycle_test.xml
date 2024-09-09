@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--加入初始化方法 和释放的方法-->
+    <bean id="beanLife" class="com.spring.source.code.beanLifecycle.entities.BeanLifecycle" init-method="initMethod"
+          destroy-method="destroy" >
+        <property name="name" value="我是bean的生命周期测试啊"></property>
+    </bean>
+
+     <!--注入后置处理器-->
+    <bean id="myBeanPostProcessor" class="com.spring.source.code.beanLifecycle.MyPostProcessor"/>
+</beans>

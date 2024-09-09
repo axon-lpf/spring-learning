@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--开启组件扫描-->
+    <context:component-scan base-package="com.spring.source.code.beanAnnotation"></context:component-scan>
+
+
+    <!-- 扫描 com.spring.source.code.beanAnnotation 和 com.spring.source.code.otherPackage 包及其子包中的所有组件 -->
+    <context:component-scan base-package="com.spring.source.code.beanAnnotation, com.spring.source.code.beanLifecycle"/>
+
+
+
+    <!-- 扫描 com.spring.source.code.beanAnnotation 包及其子包中的所有组件 -->
+    <!-- 排除 com.spring.source.code.beanAnnotation.exclude 包 -->
+    <context:component-scan base-package="com.spring.source.code.beanAnnotation">
+        <context:exclude-filter type="regex" expression="com\.spring\.source\.code\.beanAnnotation\.exclude\..*"/>
+    </context:component-scan>
+
+    <!-- 扫描 com.spring.source.code.beanAnnotation 包及其子包中的所有组件 -->
+    <!-- 排除具体的类 com.spring.source.code.beanAnnotation.SomeClass -->
+    <context:component-scan base-package="com.spring.source.code.beanAnnotation">
+        <context:exclude-filter type="assignable" class="com.spring.source.code.beanAnnotation.beanAnnotationTest" expression=""/>
+    </context:component-scan>
+
+    <!-- 扫描 com.spring.source.code.beanAnnotation 包及其子包中的所有组件 -->
+    <!-- 排除注解为 @Service 的类 -->
+    <context:component-scan base-package="com.spring.source.code.beanAnnotation">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+    </context:component-scan>
+
+</beans>
